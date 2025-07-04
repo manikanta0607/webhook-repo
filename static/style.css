@@ -1,0 +1,150 @@
+/* Custom styles for GitHub Webhook Receiver */
+
+body {
+    background-color: var(--bs-body-bg);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.card {
+    border: 1px solid var(--bs-border-color);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.event-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--bs-border-color);
+    transition: background-color 0.2s ease;
+}
+
+.event-item:hover {
+    background-color: var(--bs-secondary-bg);
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-right: 12px;
+}
+
+.event-push {
+    background-color: var(--bs-success);
+    color: white;
+}
+
+.event-pull-request {
+    background-color: var(--bs-info);
+    color: white;
+}
+
+.event-merge {
+    background-color: var(--bs-warning);
+    color: white;
+}
+
+.event-content {
+    flex: 1;
+}
+
+.event-message {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.event-meta {
+    font-size: 12px;
+    color: var(--bs-secondary-color);
+    margin-top: 4px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--bs-secondary-color);
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.status-indicator {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.btn-group-sm > .btn, .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.input-group {
+    max-width: 100%;
+}
+
+.list-unstyled li {
+    margin-bottom: 0.25rem;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bs-tertiary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bs-secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bs-secondary);
+}
+
+/* Animation for new events */
+.event-item.new-event {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .d-flex.gap-2 {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
